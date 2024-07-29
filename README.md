@@ -1,6 +1,7 @@
 # web-login-logout
 We use and evaluate ChatGPT to create login and logout web pages using bootstrap, PHP, and sqlite.
 
+
 I've been looking at ways to build a modern web site easily. I took a look at Wappler. It's at least $50/month
 and rather complicated. The example I followed was an approximately 40 hour course on doing login and logout.
 
@@ -33,4 +34,13 @@ Notes:
 
 Conclusion:
 1. ChatGPT4 is an excelent, cheaper, and time-saving way to create login and logout pages.
+
+---
+As part of the Register User web page, you should verify the entered email address by sending
+them a message with a confirmation code. To that end, I've added send_mail.php from Chat.
+As coded, it requires the smtp email password to be entered in the clear, and I think I wouldn't do that.
+Instead, I'd examine the source code refered to at the top of the file on how to authenticate
+some other way.
+
+This code has NOT been tested.
 
