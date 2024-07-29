@@ -1,5 +1,5 @@
 # web-login-logout
-We use and evaluate ChatGPT to create login and logout web pages using bootstrap and PHP
+We use and evaluate ChatGPT to create login and logout web pages using bootstrap, PHP, and sqlite.
 
 I've been looking at ways to build a modern web site easily. I took a look at Wappler. It's at least $50/month
 and rather complicated. The example I followed was an approximately 40 hour course on doing login and logout.
@@ -27,9 +27,9 @@ Observations
 
 Notes:
 1. You should create the database directory yourself instead of the script. Do so as follows:
-     cd /var/www
-     sudo mkdir databases
-     sudo chown www-data:www-data data
+     * cd /var/www
+     * sudo mkdir data
+     * sudo chown www-data:www-data data
 
 Conclusion:
 1. ChatGPT4 is an excelent, cheaper, and time-saving way to create login and logout pages.
