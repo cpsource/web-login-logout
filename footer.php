@@ -16,10 +16,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .footer-container {
+            background-color: #f8f9fa; /* Light gray background */
+        }
+    </style>
 </head>
 <body>
     <footer class="bg-dark text-white pt-4">
-        <div class="container">
+        <div class="container footer-container">
             <div class="row">
                 <!-- First Column: Picture and Text -->
                 <div class="col-md-4 text-center text-md-left">
