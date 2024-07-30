@@ -44,7 +44,7 @@
     </style>
 </head>
 <body>
-    <footer class="footer-container">
+    <footer class="footer-container text-center">
         <div class="container">
             <div class="row footer-row">
                 <!-- First Column: Picture and Text, a shout-out for https://dummyimage.com -->
