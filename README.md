@@ -44,3 +44,16 @@ some other way.
 
 This code has NOT been tested.
 
+---
+I've added support for Adobe's Dreamweaver. It provides a wizywig editor and will update the test web site if
+desired. The git interface is pretty anemic, and you are better off with a console and git. Learn these
+basic commands:
+      * git add --all
+      * git commit -m"my comment"
+      * git push
+      * git status
+
+and you are pretty much all set.
+---
+search.php and search-index.json will do the job, but sheesh, I should ask ChatGPT to write a directory
+search algorithm and update search-index.json. Add this web page to the Site Administrator page.
