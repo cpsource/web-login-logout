@@ -1,6 +1,7 @@
 <?php
 /*
  * Usage:
+ 
  * Include this footer in your main web pages using PHP's `include` or `require` statement.
  * Example:
  * <?php include 'footer.php'; ?>
