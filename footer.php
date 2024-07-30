@@ -49,7 +49,7 @@
                 <!-- First Column: Picture and Text, a shout-out for https://dummyimage.com -->
                 <div class="col-md-4 text-center text-md-left footer-column">
                     <img src="sqrbut.png" class="img-fluid mb-3" alt="Medium Rectangle">
-		    <div class="tagline">Webize to save money and time.</div>
+		    <div class="tagline">We Webize to save money and time.</div>
                 </div>
 
                 <!-- Second Column: Copyright -->
