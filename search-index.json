@@ -1,0 +1,9 @@
+[
+  { "title": "Home", "url": "index.html" },
+  { "title": "About Us", "url": "about.html" },
+  { "title": "Services", "url": "services.html" },
+  { "title": "Contact", "url": "contact.html" },
+  { "title": "Blog Post 1", "url": "blog/post1.html" },
+  { "title": "Blog Post 2", "url": "blog/post2.html" }
+]
+
