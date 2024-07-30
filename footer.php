@@ -49,12 +49,12 @@
                 <!-- First Column: Picture and Text, a shout-out for https://dummyimage.com -->
                 <div class="col-md-4 text-center text-md-left footer-column">
                     <img src="mediumrectangle.png" class="img-fluid mb-3" alt="Medium Rectangle">
-		    <div class="tagline">Your Company Tagline</div>
+		    <div class="tagline">We Webize and save you money.</div>
                 </div>
 
                 <!-- Second Column: Copyright -->
                 <div class="col-md-4 text-center my-auto footer-column">
-                    <p>Copyright &copy; <?php echo date("Y"); ?> Your Company. All rights reserved.</p>
+                    <p>Copyright &copy; <?php echo date("Y"); ?> Webize.com. All rights reserved.</p>
                 </div>
 
                 <!-- Third Column: Button to Home -->
