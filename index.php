@@ -182,6 +182,8 @@
       </div>
     </div>
     <hr>
+    <?php include 'footer.php'; ?>
+<!--
     <footer class="text-center">
       <div class="container">
         <div class="row">
@@ -191,6 +193,7 @@
         </div>
       </div>
     </footer>
+-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
