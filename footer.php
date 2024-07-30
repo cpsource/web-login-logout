@@ -32,16 +32,24 @@
             padding: 10px;
             box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
         }
+	       .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .tagline {
+            font-size: 24px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <footer class="footer-container">
         <div class="container">
             <div class="row footer-row">
-                <!-- First Column: Picture and Text -->
+                <!-- First Column: Picture and Text, a shout-out for https://dummyimage.com -->
                 <div class="col-md-4 text-center text-md-left footer-column">
-                    <img src="path/to/your/image.jpg" class="img-fluid mb-3" alt="Picture">
-                    <p>Some descriptive text about the picture.</p>
+                    <img src="mediumrectangle.png" class="img-fluid mb-3" alt="Medium Rectangle">
+		    <div class="tagline">Your Company Tagline</div>
                 </div>
 
                 <!-- Second Column: Copyright -->
