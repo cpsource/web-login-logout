@@ -53,7 +53,8 @@ basic commands:
       * git push
       * git status
 
-and you are pretty much all set.
+and you are pretty much set.
+
 ---
 search.php and search-index.json will do the job, but sheesh, I should ask ChatGPT to write a directory
 search algorithm and update search-index.json. Add this web page to the Site Administrator page.
