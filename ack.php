@@ -12,7 +12,24 @@
             margin-right: 5px;
             font-family: Arial, sans-serif;
             font-size: 18pt;
+            position: relative;
             cursor: pointer; /* Adds a pointer cursor for better UX */
+        }
+        .tooltip-custom {
+            display: none;
+            position: absolute;
+            background: #000;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 12pt;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        .colored-word:hover .tooltip-custom {
+            display: block;
         }
     </style>
 </head>
@@ -38,22 +55,11 @@
                 foreach ($words as $word) {
                     $color = sprintf('#%06X', mt_rand(0, 0xFFFFFF));
                     $french_word = isset($translations[$word]) ? $translations[$word] : $word;
-                    echo '<span class="colored-word" style="color:' . $color . ';" data-toggle="tooltip" title="' . htmlspecialchars($french_word) . '">' . htmlspecialchars($word) . '</span>';
+                    echo '<span class="colored-word" style="color:' . $color . ';">' . htmlspecialchars($word) . '<span class="tooltip-custom">' . htmlspecialchars($french_word) . '</span></span>';
                 }
             ?>
         </div>
     </div>
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            // Initialize Bootstrap tooltips
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
 </body>
 </html>
 
