@@ -85,3 +85,8 @@ tst.php provides a good introduction to the various forms of selectors used in c
 
 Doing a "composer require erusev/parsedown" didn't seem to work.
 
+Note: after you clone this library, do a:
+
+  * git submodule update --init --recursive
+
+which will pickup the parsedown git library.
