@@ -10,6 +10,8 @@
         .colored-word {
             display: inline-block;
             margin-right: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 18pt;
         }
     </style>
 </head>
