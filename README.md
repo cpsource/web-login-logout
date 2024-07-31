@@ -82,3 +82,6 @@ you have to do these two things:
   * then point tst.php to it, and you are done. Just call up the web page.
   
 tst.php provides a good introduction to the various forms of selectors used in css.
+
+Doing a "composer require erusev/parsedown" didn't seem to work.
+
