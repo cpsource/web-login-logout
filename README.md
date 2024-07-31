@@ -56,9 +56,12 @@ basic commands:
 and you are pretty much set.
 
 ---
+
 search.php and search-index.json will do the job, but sheesh, I should ask ChatGPT to write a directory
 search algorithm and update search-index.json. Add this web page to the Site Administrator page.
+
 ---
+
 I tested ChatGPT if it could handle popups WHILE translating the text to French. Then I had ChatGPT
 convert the whole mess to bootstrap version 5. 
 
