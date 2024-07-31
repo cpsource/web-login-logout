@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Display</title>
+    <title>Markdown to HTML Example</title>
     <!-- Bootstrap 4 CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        pre {
-            white-space: pre-wrap;       /* CSS 3 */
-            white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-            white-space: -pre-wrap;      /* Opera 4-6 */
-            white-space: -o-pre-wrap;    /* Opera 7 */
-            word-wrap: break-word;       /* Internet Explorer 5.5+ */
-        }
-    </style>
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Content from File</h1>
+        <h1 class="text-center">Markdown to HTML Example</h1>
         <div class="mt-4">
             <?php
+                require 'Parsedown.php';
+                $Parsedown = new Parsedown();
+
+                // Path to the markdown file
                 $filePath = 'assets/tst.txt'; // Update with the actual path to tst.txt
                 if (file_exists($filePath)) {
-                    $content = file_get_contents($filePath);
-                    echo '<pre>' . htmlspecialchars($content) . '</pre>';
+                    $markdown = file_get_contents($filePath);
+                    // Convert markdown to HTML
+                    $html = $Parsedown->text($markdown);
+                    // Display the HTML content
+                    echo $html;
                 } else {
                     echo '<p class="text-danger">File not found.</p>';
                 }

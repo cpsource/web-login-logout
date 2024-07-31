@@ -70,3 +70,15 @@ It passed with <span style="color:#FF0000">flying colors.</span> Take a look at 
   * ack.php - a bootstrap four version
   * ack-bs5.php - the bootstrap five version
 
+---
+Can I capture the ChatGPT output and turn it into a web page? The answer is yes. See example tst.php. First though,
+you have to do these two things:
+
+  * cd /var/www/html
+  * git clone https://github.com/erusev/parsedown.git
+  * sudo ln -s parsedown/Parsedown.php .
+  * on ChatGPT, click on the answer copy button, then yank it into some new file, say tst.txt
+    and store that in assets
+  * then point tst.php to it, and you are done. Just call up the web page.
+  
+tst.php provides a good introduction to the various forms of selectors used in css.
