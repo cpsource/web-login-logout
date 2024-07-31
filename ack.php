@@ -36,6 +36,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Random Color Words with Tooltips</h1>
+        <p1>Hover over the word to get the French translation.</p1>
         <div class="mt-4">
             <?php
                 $sentence = "The quick brown fox jumped over the lazy dog.";
