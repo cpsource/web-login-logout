@@ -17,7 +17,11 @@ use Aws\Exception\AwsException;
 $SesClient = new SesClient([
     'profile' => 'default',
     'version' => '2010-12-01',
-    'region'  => 'us-east-1'
+    'region'  => 'us-east-1',
+    'debug'   => true,
+    'http' => [
+               'verify' => '/home/ubuntu/vendor/ca-bundle.crt'
+              ]
 ]);
 
 // Replace sender@example.com with your "From" address.

@@ -37,3 +37,5 @@ See https://docs.aws.amazon.com/ses/latest/dg/send-an-email-using-sdk-programmat
 
 See https://docs.aws.amazon.com/ses/latest/dg/using-configuration-sets.html
 
+cacert.pem is from https://curl.se/docs/caextract.html
+
