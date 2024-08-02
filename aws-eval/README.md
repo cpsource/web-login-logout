@@ -37,6 +37,8 @@ See https://docs.aws.amazon.com/ses/latest/dg/send-an-email-using-sdk-programmat
 
 See https://docs.aws.amazon.com/ses/latest/dg/using-configuration-sets.html
 
+cacert.pem is from https://curl.se/docs/caextract.html
+
 ## Currently Stuck
 
 PHP Fatal error:  Uncaught Aws\Exception\CredentialsException: Cannot read credentials from /home/ubuntu/.aws/credentials in /home/ubuntu/vendor/aws/aws-sdk-php/src/Credentials/CredentialProvider.php:394
@@ -47,6 +49,10 @@ I'm in a sandbox too. Somewhere I read that I need to verify the to address, but
 
 Amazon directions tend to help to a point, then leave you there. Then, you have to wander aimlessly around.
 
-cacert.pem is from https://curl.se/docs/caextract.html
+What is an IAM user?
 
+## Compare with fastMail
 
+It took about two hours to get fastMail connected. I'm already four hours into the aws with nothing
+to show for it yet. They should sit somebody down who is unfamiliar with their systems and watch
+where they get stuck. Then FIX IT!
