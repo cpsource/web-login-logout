@@ -37,3 +37,13 @@ See https://docs.aws.amazon.com/ses/latest/dg/send-an-email-using-sdk-programmat
 
 See https://docs.aws.amazon.com/ses/latest/dg/using-configuration-sets.html
 
+## Currently Stuck
+
+PHP Fatal error:  Uncaught Aws\Exception\CredentialsException: Cannot read credentials from /home/ubuntu/.aws/credentials in /home/ubuntu/vendor/aws/aws-sdk-php/src/Credentials/CredentialProvider.php:394
+
+Where would I get that from ?
+
+I'm in a sandbox too. Somewhere I read that I need to verify the to address, but where was that again?
+
+Amazon directions tend to help to a point, then leave you there. Then, you have to wander aimlessly around.
+
