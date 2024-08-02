@@ -5,7 +5,7 @@
 //
 // If necessary, modify the path in the require statement below to refer to the 
 // location of your Composer autoload.php file.
-require 'vendor/autoload.php';
+require '/home/ubuntu/vendor/autoload.php';
 
 use Aws\Ses\SesClient;
 use Aws\Exception\AwsException;
@@ -17,7 +17,11 @@ use Aws\Exception\AwsException;
 $SesClient = new SesClient([
     'profile' => 'default',
     'version' => '2010-12-01',
-    'region'  => 'us-east-1'
+    'region'  => 'us-east-1',
+    'debug'   => true,
+    'http' => [
+               'verify' => '/home/ubuntu/vendor/ca-bundle.crt'
+              ]
 ]);
 
 // Replace sender@example.com with your "From" address.
