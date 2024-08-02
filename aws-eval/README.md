@@ -33,3 +33,7 @@ one a try.
 See https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/getting-started_installation.html for install
 instructions.
 
+See https://docs.aws.amazon.com/ses/latest/dg/send-an-email-using-sdk-programmatically.html#send-an-email-using-sdk-programmatically-examples
+
+See https://docs.aws.amazon.com/ses/latest/dg/using-configuration-sets.html
+
