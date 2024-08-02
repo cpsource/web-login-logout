@@ -15,13 +15,16 @@ use Aws\Exception\AwsException;
 // profile parameter if you want to use a profile in your credentials file
 // other than the default.
 $SesClient = new SesClient([
-    'profile' => 'default',
     'version' => '2010-12-01',
-    'region'  => 'us-east-1',
-    'debug'   => true,
+    'region'  => 'ca-central-1',
+    'debug'   => false,
     'http' => [
                'verify' => '/home/ubuntu/vendor/ca-bundle.crt'
-              ]
+              ],
+    'credentials' => array(
+    		      'key' => 'AKIAWWNDSJC3NCY3JIHP',
+		      'secret' => '5...'
+		      )
 ]);
 
 // Replace sender@example.com with your "From" address.
