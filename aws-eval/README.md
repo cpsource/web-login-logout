@@ -68,6 +68,9 @@ and edit the passwords into the php scrpt. I need to move them to .aws.
   * aws_access_key_id = your-key
   * aws_secret_access_key = your-secret
 
+Note: The script amazon-ses-sample.php if called directly from php, however
+      it will not work if the file is called as a web page.
+      
 ## Summary
 
 Seting up aws mailer is not for the timid. I finially got the task done in about 9 hours.

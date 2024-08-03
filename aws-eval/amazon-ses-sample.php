@@ -43,7 +43,10 @@ $plaintext_body = 'This email was sent with Amazon SES using the AWS SDK for PHP
 $html_body =  '<h1>AWS Amazon Simple Email Service Test Email</h1>'.
               '<p>This email was sent with <a href="https://aws.amazon.com/ses/">'.
               'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-php/">'.
-              'AWS SDK for PHP</a>.</p>';
+              'AWS SDK for PHP</a>.</p>'.
+	      '<button onclick="location.href=' . '"https://projet2025.org"' . ' type="button">'.
+	      	       'https://projet2025.org</button>';
+		      
 $char_set = 'UTF-8';
 
 try {
