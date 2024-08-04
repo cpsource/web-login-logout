@@ -15,3 +15,11 @@ Open the Webpage: Navigate to the webpage with the headline.
 Inspect the Element: Right-click on the headline and select "Inspect" or "Inspect Element" from the context menu.
 Check the CSS: In the developer tools, look at the styles applied to the headline element. You will see the font-family listed in the CSS rules.
 This method will provide you with the exact font used for the headline on that particular website. If you provide me with the specific publication or website, I can give a more targeted answer based on their known font usage.
+
+## A Trick to build a static web page
+
+If you do:
+
+  * `php fonts.php > fonts.html`
+
+you will get a static web page, called fonts.html
