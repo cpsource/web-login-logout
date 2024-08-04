@@ -23,6 +23,9 @@
             font-size: 1.2em; /* Standard font size for article text */
             line-height: 1.6;
         }
+	h2, h3 {
+            font-weight: bold;
+	}
 	
     </style>    
 </head>
