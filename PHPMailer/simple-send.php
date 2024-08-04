@@ -1,5 +1,15 @@
 <?php
-require 'PHPMailerAutoload.php';
+require('Exception.php');
+require('PHPMailer.php');
+require('SMTP.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'autoload.php';
+
+//require 'PHPMailerAutoload.php';
 $mail = new PHPMailer;
 $mail->setFrom('admin@natdem.org', 'Your Name');
 $mail->addAddress('page.cal@gmail.com', 'My Friend');
