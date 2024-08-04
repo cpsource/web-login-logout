@@ -9,16 +9,17 @@
     <!-- font -->
     <style>
         body {
-            font-family: Georgia, serif;
             background-color: #f8f9fa; /* Light grey background for better readability */
             padding: 20px;
         }
         .headline {
+            font-family: Cheltenham, serif;
             font-size: 2em; /* Larger font size for headlines */
             font-weight: bold;
             margin-bottom: 10px;
         }
         .article {
+            font-family: Georgia, serif;
             font-size: 1.2em; /* Standard font size for article text */
             line-height: 1.6;
         }
@@ -26,8 +27,8 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Markdown to HTML Example</h1>
-        <div class="mt-4">
+        <h1 class="text-center headline">Markdown to HTML Example (fonts)</h1>
+        <div class="mt-4 article">
             <?php
                 require 'Parsedown.php';
                 $Parsedown = new Parsedown();

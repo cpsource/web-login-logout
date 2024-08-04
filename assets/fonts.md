@@ -2,11 +2,12 @@
 The font used in the headline "The U.S. is trying to stop China from getting Nvidia microchips to advance its military. The private sector is fighting back. 11 min read" would depend on the specific website or publication displaying the headline. Different publications use different fonts based on their design guidelines. However, here are some common fonts used by major news websites and publications:
 
   * The New York Times: Georgia (serif) for body text and Cheltenham (serif) for headlines.
-  *The Washington Post: Postoni (serif) for headlines and San Francisco (sans-serif) for body text.
+  * The Washington Post: Postoni (serif) for headlines and San Francisco (sans-serif) for body text.
   * BBC: BBC Reith (sans-serif).
   * CNN: CNN uses a custom font family called "CNN Sans" (sans-serif).
   * The Guardian: Guardian Egyptian Web (serif) for headlines and Guardian Text Sans for body text.
   * Time: Helvetica Neue (sans-serif) or Georgia (serif).
+
 ## Examine CSS
 To accurately determine the font, you would need to inspect the specific website's CSS where the headline is located. Here is how you can do it:
 
