@@ -18,11 +18,12 @@
             font-weight: bold;
             margin-bottom: 10px;
         }
-        .article {
+        .article, h2, h3 {
             font-family: Georgia, serif;
             font-size: 1.2em; /* Standard font size for article text */
             line-height: 1.6;
         }
+	
     </style>    
 </head>
 <body>
