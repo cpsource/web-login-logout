@@ -56,3 +56,21 @@ What is an IAM user?
 It took about two hours to get fastMail connected. I'm already four hours into the aws with nothing
 to show for it yet. They should sit somebody down who is unfamiliar with their systems and watch
 where they get stuck. Then FIX IT!
+
+## Finally working
+
+I had to sudo apt-get install php-xml -y
+and edit the passwords into the php scrpt. I need to move them to .aws.
+
+~/.aws/credentials is just
+
+  * [default]
+  * aws_access_key_id = your-key
+  * aws_secret_access_key = your-secret
+
+Note: The script amazon-ses-sample.php if called directly from php, however
+      it will not work if the file is called as a web page.
+      
+## Summary
+
+Seting up aws mailer is not for the timid. I finially got the task done in about 9 hours.

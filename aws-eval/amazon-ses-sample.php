@@ -17,11 +17,11 @@ use Aws\Exception\AwsException;
 $SesClient = new SesClient([
     'profile' => 'default',
     'version' => '2010-12-01',
-    'region'  => 'us-east-1',
-    'debug'   => true,
+    'region'  => 'ca-central-1',
+    'debug'   => false,
     'http' => [
                'verify' => '/home/ubuntu/vendor/ca-bundle.crt'
-              ]
+              ],
 ]);
 
 // Replace sender@example.com with your "From" address.
@@ -43,7 +43,10 @@ $plaintext_body = 'This email was sent with Amazon SES using the AWS SDK for PHP
 $html_body =  '<h1>AWS Amazon Simple Email Service Test Email</h1>'.
               '<p>This email was sent with <a href="https://aws.amazon.com/ses/">'.
               'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-php/">'.
-              'AWS SDK for PHP</a>.</p>';
+              'AWS SDK for PHP</a>.</p>'.
+	      '<button onclick="location.href=' . '"https://projet2025.org"' . ' type="button">'.
+	      	       'https://projet2025.org</button>';
+		      
 $char_set = 'UTF-8';
 
 try {
