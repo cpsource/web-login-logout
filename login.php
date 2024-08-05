@@ -1,4 +1,9 @@
 <?php
+
+// ACK - don't forget to extension=sqlite3 in the apache php.ini file !!!
+// ACK ACK - and load the extension thus: sudo apt-get install php-sqlite3
+//
+//
 // Start the session
 session_start();
 ?>
