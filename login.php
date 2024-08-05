@@ -51,10 +51,15 @@ session_start();
                     } else {
                         // Path to the SQLite3 database file
                         $dbPath = '/var/www/data/users.db';
-
-                        // Open the database
-                        $db = new SQLite3($dbPath);
-
+			try {
+                          // Open the database
+                          $db = new SQLite3($dbPath,SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);
+			  echo "Database connection successful.";
+                        } catch (Exception $e) {
+                            	// Handle the exception if the connection fails
+				echo "Failed to connect to the database: " . $e->getMessage();
+				sleep(5);
+                        }
                         // Check if email exists and get the password and login_level
                         $stmt = $db->prepare('SELECT password, login_level FROM users WHERE email_address = :email_address');
                         $stmt->bindValue(':email_address', $email, SQLITE3_TEXT);
