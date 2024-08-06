@@ -18,6 +18,33 @@ is_already_running() {
     fi
 }
 
+# Function to clean up tasks with flag = 3
+cleanup_tasks() {
+    # Fetch tasks with flag = 3 from the database
+    TASKS=$(php /var/www/html/tasker/tasker_helper_get_cleanup_tasks.php)
+
+    if [ -z "$TASKS" ]; then
+        log_message "No tasks with flag = 3 found for cleanup."
+        return
+    fi
+
+    # Process each task
+    echo "$TASKS" | while read -r TASK; do
+        IFS='|' read -r ID SESSION_ID <<< "$TASK"
+
+        # Remove directory for the session
+        SESSION_DIR="/var/www/data/$SESSION_ID"
+        if [ -d "$SESSION_DIR" ]; then
+            rm -rf "$SESSION_DIR"
+            log_message "Removed directory $SESSION_DIR for task $ID."
+        fi
+
+        # Remove the task from the database
+        php /var/www/html/tasker/tasker_helper_delete_task.php "$ID"
+        log_message "Task $ID with flag = 3 deleted from the database."
+    done
+}
+
 # Function to process tasks with flag = 0
 process_tasks() {
     # Fetch tasks with flag = 0 from the database
@@ -25,7 +52,7 @@ process_tasks() {
 
     if [ -z "$TASKS" ]; then
         log_message "No tasks with flag = 0 found."
-        exit 0
+        return
     fi
 
     # Process each task
@@ -53,6 +80,7 @@ process_tasks() {
 # Main script execution
 is_already_running
 log_message "Script started."
+cleanup_tasks
 process_tasks
 log_message "Script finished."
 exit 0
