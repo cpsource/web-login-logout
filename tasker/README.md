@@ -34,3 +34,35 @@ but hopefully of the form:
 	    }
 `
 
+## How to install
+
+  * create a subdirectory called 'tasker' in the root of your web page and
+    clone this toolkit there.
+  * edit /etc/apache2/sites-enabled/000-default.conf, default-ssl.conf with
+`
+  <Directory /var/www/html/tasker>
+      AllowOverride All
+  </Directory>
+`
+  * add your own user + password via
+`
+    sudo htpasswd -c /var/www/html/tasker/.htpasswd username
+`
+  * restart apache2 via sudo systemctl restart apache2
+
+  * run the script ./tasker_initialize.sh
+
+  * create a crontab entry pointing to tasker.sh. You can set the time interval to whatever you think you need. Just man crontab to see how to do it. For testing, I used '* * * * * /var/www/html/tasker/tasker.sh for a one minute time.
+
+## How to use tasker
+
+  * just point your web browser at https://<yoursite>/tasker/tasker_enqueue.php and add your commands. Press submit.
+  * you can check the status of the command via https://<yoursite>/tasker/tasker_status.php. Flag has the following values:
+	- New Job - you've queued it but the cron job hasn't seen it yet
+	- In Progress - it's being executed now (left for future expansion)
+	- Completed - the job is over. You should see the results displayed
+	- Acknowledged - you, the sysadmin, have acknowledged seeing the results
+  * Once you see Acknowledged, you browse at https://<yoursite>/tasker/tasker_acknowledge.php and follow the prompts.
+
+
+
