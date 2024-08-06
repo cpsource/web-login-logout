@@ -1,5 +1,8 @@
 # The tasker sub-system gives bash to html/php/css.
 
+This code, in its entirety, was written by ChatGPT in only four hours. It made only one
+mistake, which it corrected when I pointed it out.
+
 ## How does it work ?
 
   * html/php writes instructions into a SQLite database, called tasker.db
@@ -30,5 +33,4 @@ but hopefully of the form:
 			sleep(5);
 	    }
 `
-
 
