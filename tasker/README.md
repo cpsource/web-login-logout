@@ -39,15 +39,19 @@ but hopefully of the form:
   * create a subdirectory called 'tasker' in the root of your web page and
     clone this toolkit there.
   * edit /etc/apache2/sites-enabled/000-default.conf, default-ssl.conf with
+
 `
   <Directory /var/www/html/tasker>
       AllowOverride All
   </Directory>
 `
+
   * add your own user + password via
+
 `
     sudo htpasswd -c /var/www/html/tasker/.htpasswd username
 `
+
   * restart apache2 via sudo systemctl restart apache2
 
   * run the script ./tasker_initialize.sh
