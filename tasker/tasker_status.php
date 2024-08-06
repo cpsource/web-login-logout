@@ -56,7 +56,8 @@
         // Handle exceptions
         echo "Failed to retrieve data: " . $e->getMessage();
     }
-    ?>
+include '../footer.php';
+?>
 </body>
 </html>
 
