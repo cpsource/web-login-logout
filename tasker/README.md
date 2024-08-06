@@ -34,7 +34,7 @@ but hopefully of the form:
             echo "Database connection successful.";
 	    } catch (Exception $e) {
                        	// Handle the exception if the connection fails
-			echo "Failed to connect to the database: " . $e->getMessage();
+			echo "Failed to connect to the database: " . $e-\>getMessage();
 			sleep(5);
 	    }
 
@@ -47,9 +47,9 @@ but hopefully of the form:
   * edit /etc/apache2/sites-enabled/000-default.conf, default-ssl.conf with
 
 `
-  <Directory /var/www/html/tasker>
+  \<Directory /var/www/html/tasker\>
       AllowOverride All
-  </Directory>
+  \</Directory\>
 `
 
   * add your own user + password via
@@ -66,13 +66,13 @@ but hopefully of the form:
 
 ## How to use tasker
 
-  * just point your web browser at https://<yoursite>/tasker/tasker_enqueue.php and add your commands. Press submit.
-  * you can check the status of the command via https://<yoursite>/tasker/tasker_status.php. Flag has the following values:
+  * just point your web browser at https://\<yoursite\>/tasker/tasker_enqueue.php and add your commands. Press submit.
+  * you can check the status of the command via https://\<yoursite\>/tasker/tasker_status.php. Flag has the following values:
 	- New Job - you've queued it but the cron job hasn't seen it yet
 	- In Progress - it's being executed now (left for future expansion)
 	- Completed - the job is over. You should see the results displayed
 	- Acknowledged - you, the sysadmin, have acknowledged seeing the results
-  * Once you see Acknowledged, you browse at https://<yoursite>/tasker/tasker_acknowledge.php and follow the prompts.
+  * Once you see Acknowledged, you browse at https://\<yoursite\>/tasker/tasker_acknowledge.php and follow the prompts.
 
 ## As far as a security risk, yup.
 
