@@ -69,7 +69,7 @@
         <input type="text" id="command" name="command" required maxlength="255">
         <input type="submit" value="Enqueue Task">
     </form>
- <?php include '../footer.php'; ?>
+ <?php include 'footer.php'; ?>
 </body>
 </html>
 
