@@ -90,3 +90,8 @@ Note: after you clone this library, do a:
   * git submodule update --init --recursive
 
 which will pickup the parsedown git library.
+
+Pull in tasker with
+
+  * git clone https://github.com/cpsource/tasker.git
+
