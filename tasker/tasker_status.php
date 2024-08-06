@@ -21,7 +21,6 @@
     <h1>Tasker Status</h1>
     <?php
     try {
-        // Open the SQLite3 database
         $db = new SQLite3('/var/www/data/tasker.db', SQLITE3_OPEN_READWRITE);
 
         // Check if there are any records in the taskers table
@@ -38,7 +37,26 @@
             while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
                 echo "<tr>";
                 echo "<td>" . htmlspecialchars($row['id']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['flag']) . "</td>";
+
+                // Display flag status
+                switch ($row['flag']) {
+                    case 0:
+                        echo "<td>New Job</td>";
+                        break;
+                    case 1:
+                        echo "<td>In Progress</td>";
+                        break;
+                    case 2:
+                        echo "<td>Completed</td>";
+                        break;
+                    case 3:
+                        echo "<td>Acknowledged</td>";
+                        break;
+                    default:
+                        echo "<td>" . htmlspecialchars($row['flag']) . "</td>";
+                        break;
+                }
+
                 echo "<td>" . htmlspecialchars($row['session_id']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['command']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['response']) . "</td>";
@@ -53,11 +71,9 @@
         // Close the database connection
         $db->close();
     } catch (Exception $e) {
-        // Handle exceptions
         echo "Failed to retrieve data: " . $e->getMessage();
     }
-include '../footer.php';
-?>
+    ?>
 </body>
 </html>
 
