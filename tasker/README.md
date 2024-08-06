@@ -13,13 +13,17 @@ mistake, which it corrected when I pointed it out.
   * The php in html then clears tasker.db
 
 ## Note: A log file is kept at /var/log/tasker/tasker
-## Note: All database opens must be of this form:
+## Note: All database opens (everywhere on your site) must be of this form:
 
-  `$db = new SQLite3($dbPath,SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);`
+`
+
+  $db = new SQLite3($dbPath,SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);
+
+`
 
 but hopefully of the form:
 
-'
+`
 	// Path to the SQLite3 database file
         $dbPath = '/var/www/data/tasker.db';
 
