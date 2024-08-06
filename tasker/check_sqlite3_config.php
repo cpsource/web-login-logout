@@ -1,5 +1,6 @@
 <?php
 // try now to serialize database accesses
+// Note: This should fail both on html and bash as sqlite3_config is a 'c' call, not php
    try {
        sqlite3_config(SQLITE_CONFIG_SERIALIZED);
        echo "sqlite3_config successful.";

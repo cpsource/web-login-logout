@@ -10,4 +10,25 @@
   * The php in html then clears tasker.db
 
 ## Note: A log file is kept at /var/log/tasker/tasker
+## Note: All database opens must be of this form:
+
+  `$db = new SQLite3($dbPath,SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);`
+
+but hopefully of the form:
+
+'
+	// Path to the SQLite3 database file
+        $dbPath = '/var/www/data/tasker.db';
+
+	try {
+            // Open the database
+            $db = new SQLite3($dbPath,SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);
+            echo "Database connection successful.";
+	    } catch (Exception $e) {
+                       	// Handle the exception if the connection fails
+			echo "Failed to connect to the database: " . $e->getMessage();
+			sleep(5);
+	    }
+`
+
 
