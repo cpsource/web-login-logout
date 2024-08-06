@@ -34,7 +34,7 @@ but hopefully of the form:
             echo "Database connection successful.";
 	    } catch (Exception $e) {
                        	// Handle the exception if the connection fails
-			echo "Failed to connect to the database: " . $e-\>getMessage();
+			echo "Failed to connect to the database: " . $e->getMessage();
 			sleep(5);
 	    }
 
@@ -47,9 +47,9 @@ but hopefully of the form:
   * edit /etc/apache2/sites-enabled/000-default.conf, default-ssl.conf with
 
 `
-  \<Directory /var/www/html/tasker\>
+  <Directory /var/www/html/tasker>
       AllowOverride All
-  \</Directory\>
+  </Directory>
 `
 
   * add your own user + password via
