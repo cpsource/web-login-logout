@@ -3,4 +3,4 @@
 	url = https://github.com/erusev/parsedown.git
 [submodule "tasker"]
 	path = tasker
-	url = git@github.com:cpsource/tasker.git
+	url = https://github.com/cpsource/tasker.git
