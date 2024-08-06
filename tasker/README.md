@@ -1,4 +1,4 @@
-# The tasker sub-system gives bash to html/php/css.
+# The tasker sub-system gives bash to html with php.
 
 This code, in its entirety, was written by ChatGPT in only four hours. It made only one
 mistake, which it corrected when I pointed it out.
@@ -24,6 +24,7 @@ mistake, which it corrected when I pointed it out.
 but hopefully of the form:
 
 `
+
 	// Path to the SQLite3 database file
         $dbPath = '/var/www/data/tasker.db';
 
@@ -36,6 +37,7 @@ but hopefully of the form:
 			echo "Failed to connect to the database: " . $e->getMessage();
 			sleep(5);
 	    }
+
 `
 
 ## How to install
@@ -72,5 +74,7 @@ but hopefully of the form:
 	- Acknowledged - you, the sysadmin, have acknowledged seeing the results
   * Once you see Acknowledged, you browse at https://<yoursite>/tasker/tasker_acknowledge.php and follow the prompts.
 
+## As far as a security risk, yup.
 
+  You can, very simply, destroy your system if you don't know exactly what you are doing. MAKE SURE YOU BACKUP EVERYTHING before you try to learn bash with this.
 
