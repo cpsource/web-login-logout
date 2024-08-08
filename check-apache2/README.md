@@ -17,3 +17,7 @@ Modify the script and replace https://natdem.org with your own web site.
 Make sure logger and wget are installed.
 
 Run crontab -e to run check-apache2.sh. The script can also be run from the command prompt to test it manually.
+
+# Note
+
+This was mostly written by ChatGPT4, with a lot of careful prodding and testing.
