@@ -7,3 +7,5 @@ This is the README.md file for this subdirectory
 
 point-web-to-natdem.sh - This is a file I use to make sure I'm serving the right web page. I use the
 domain for other things, and this automatically resets it in case I forget.
+
+This will log to /var/log/syslog.
