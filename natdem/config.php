@@ -43,12 +43,13 @@ if (strcmp('natdem.net', $cpage_who) === 0 || strcmp('www.natdem.net', $cpage_wh
     $cp_base = '/';
     $cp_base_url = $cp_url . $cp_base;
     $cp_host_type = 4;
-    $cp_path = '/home/ubuntu/web-login-logout/natdem/';
+    $cp_path = getcwd() . '/';
 }
 
 $cp_url = '3.215.108.124';
 $cp_user = 'admin';
 $cp_pass = 'password123';
+$cp_getcwd = getcwd();
 
 if (isset($cp_debug) && $cp_debug) {
     echo "cpage_remote_flag = $cpage_remote_flag<br>";
@@ -59,6 +60,7 @@ if (isset($cp_debug) && $cp_debug) {
     echo "cp_path = $cp_path<br>";
     echo "cp_user = $cp_user<br>";
     echo "cp_pass = $cp_pass<br>";
+    echo "cp_getcwd = $cp_getcwd<br>";
     echo "</pre>";
 }
 

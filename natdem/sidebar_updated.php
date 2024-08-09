@@ -14,15 +14,9 @@
 		<td class="sidebar"><a href="/?page=book">The Book</a><hr class="light-hr"></td>
 	</tr>
 	<tr>
-		<td class="sidebar"><a
-
-<?php
-echo "href='$cp_url/?page=pressroom'"
-?>
-
->Press Room</a><hr class="light-hr"></td>
-		</tr>
-		</tbody></table>
+		<td class="sidebar"><a href="/?page=pressroom">Press Room</a><hr class="light-hr"></td>
+	</tr>
+	</tbody></table>
 
 <!-- RESOURCES -->
 		<img src="images/pixel.gif" width="1" height="10" alt="" border="0"><br>
