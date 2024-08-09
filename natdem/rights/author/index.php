@@ -1,3 +1,3 @@
 <?php
-include '/rights/author/Bill_Page_in_Uniform.html';
+include 'Bill_Page_in_Uniform.html';
 ?>
