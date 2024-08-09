@@ -95,19 +95,31 @@
     <?php include 'header.php'; ?>
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2 no-padding" style="width: 12%;">
-                <!-- Table for the first column -->
-<?php
-include 'sidebar_updated.php';
-?>
-            </div>
-            <div class="col-md-10 no-padding">
-              <!-- Content for the second column -->
+      <div class="row">
+	<!-- Sidebar -->
+
+            <nav class="col-md-3 col-lg-2 sidebar">
+                <h3 class="text-center text-light">Menu</h3>
+                <a href="/?page=author">The Author</a>
+                <a href="/?page=book">The Book</a>
+                <a href="/?page=pressroom">Press Room</a>
+                <a href="/?page=udohr">Human Rights</a>
+		<a href="/?page=greatgoals">Great Goals</a>
+		<a href="/?page=fullpotential">Humanity Reaching Full Potential</a>
+		<a href="/?page=family-pictures">Family Pictures</a>
+		<a href="/?page=obituary">Obituary</a>
+		<a href="/?page=bombs">Atomic Bombs</a>
+		<a href="/?page=secretariat">UN Secretariat</a>
+		<a href="/?page=end9">Music and Parting Words</a>						
+            </nav>
+
+	<!-- Main content -->
+
+	    <main class="col-md-9 col-lg-10 content">
 <?php
 include 'rights/index.php';
 ?>
-            </div>
+            </main>
         </div>
     </div>
 
