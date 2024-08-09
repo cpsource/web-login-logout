@@ -1,6 +1,7 @@
 <?php
 // Find out who we are and set flag
 $cpage_who = $_SERVER['SERVER_NAME'];
+//$cp_debug = true;
 
 // Check if $cp_debug is true to enable debugging
 if (isset($cp_debug) && $cp_debug) {
@@ -38,17 +39,16 @@ if (strcmp('natdem.net', $cpage_who) === 0 || strcmp('www.natdem.net', $cpage_wh
     $cp_path = '/home/unifying/public_html/natdem/';
 } else {
     $cpage_remote_flag = 0;
-    $cp_url = 'https://natdem';
+    $cp_url = 'https://natdem.org';
     $cp_base = '/';
     $cp_base_url = $cp_url . $cp_base;
     $cp_host_type = 4;
-    $cp_path = '/web0/natdem/';
+    $cp_path = '/home/ubuntu/natdem/';
 }
 
-$cp_url = '15.222.150.160';
+$cp_url = '3.215.108.124';
 $cp_user = 'admin';
 $cp_pass = 'password123';
-$cp_debug = false;
 
 if (isset($cp_debug) && $cp_debug) {
     echo "cpage_remote_flag = $cpage_remote_flag<br>";

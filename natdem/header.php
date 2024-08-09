@@ -31,6 +31,12 @@
         }
     </style>
 </head>
+
+<?php
+// setup our configuration
+include 'config.php';
+?>
+
 <body>
     <div class="container darker-green-bg">
         <div class="row no-padding">
