@@ -37,6 +37,56 @@
             border-top: 1px solid #ccc; /* Light grey border */
             margin: 5px 0;
         }
+
+        /* Custom CSS for the sidebar */
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .sidebar {
+            background-color: #343a40;
+            padding-top: 20px;
+            min-height: 100vh;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #495057;
+            color: #f8f9fa;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: #f8f9fa;
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                min-width: 100%;
+                max-width: 100%;
+                min-height: auto;
+            }
+
+            .sidebar a {
+                text-align: center;
+            }
+
+            .content {
+                padding-top: 20px;
+            }
+        }
+	
     </style>
 </head>
 <body>
@@ -44,7 +94,7 @@
     <!-- Include Header -->
     <?php include 'header.php'; ?>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 no-padding" style="width: 12%;">
                 <!-- Table for the first column -->
