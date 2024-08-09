@@ -47,14 +47,15 @@
         }
 
         .sidebar {
-            background-color: #343a40;
+            background-color: #a3d9a5; /* Slightly darker green background */
             padding-top: 20px;
-            min-height: 100vh;
+	    min-height: 100vh;
+            margin-left: 30px; /* Move the sidebar 30px to the right */
         }
 
         .sidebar a {
             display: block;
-            color: white;
+            color: black;
             padding: 15px;
             text-decoration: none;
             transition: 0.3s;
@@ -115,7 +116,7 @@
 
 	<!-- Main content -->
 
-	    <main class="col-md-9 col-lg-10 content">
+	    <main class="col-md-8 col-lg-8 content">
 <?php
 include 'rights/index.php';
 ?>
