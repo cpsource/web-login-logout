@@ -1,7 +1,7 @@
 <?php
 // Find out who we are and set flag
 $cpage_who = $_SERVER['SERVER_NAME'];
-//$cp_debug = true;
+$cp_debug = false;
 
 // Check if $cp_debug is true to enable debugging
 if (isset($cp_debug) && $cp_debug) {
@@ -43,7 +43,7 @@ if (strcmp('natdem.net', $cpage_who) === 0 || strcmp('www.natdem.net', $cpage_wh
     $cp_base = '/';
     $cp_base_url = $cp_url . $cp_base;
     $cp_host_type = 4;
-    $cp_path = '/home/ubuntu/natdem/';
+    $cp_path = '/home/ubuntu/web-login-logout/natdem/';
 }
 
 $cp_url = '3.215.108.124';
