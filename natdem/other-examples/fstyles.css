@@ -1,0 +1,22 @@
+/* Applying Georgia font at 18pt (24px) across the entire page */
+body {
+    font-family: Georgia, serif; /* Georgia font with a serif fallback */
+    font-size: 24px; /* 18pt equivalent */
+    line-height: 1.1; /* Adjusting line height for readability */
+    margin: 20px; /* Adding some margin around the page */
+    color: #333; /* Setting a dark grey text color */
+}
+
+/* Styling the headline */
+h1 {
+    font-size: 2em; /* Making the headline larger */
+    text-align: center; /* Centering the headline */
+    color: #444; /* Slightly lighter color for the headline */
+}
+
+/* Styling paragraphs */
+p {
+    margin-bottom: 1px; /* Adding space between paragraphs */
+    margin-left: 30px;
+}
+
