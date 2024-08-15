@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
     <style>
         .darker-green-bg {
             background-color: #a3d9a5;
@@ -40,6 +40,13 @@
             margin: 20px auto;
             /* Add 20px padding around the hr */
         }
+
+        .custom-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
     </style>
 </head>
 
@@ -49,7 +56,7 @@ include 'config.php';
 ?>
 
 <body>
-    <div class="container darker-green-bg">
+    <div class="container-fluid darker-green-bg custom-container">
         <div class="row no-padding">
             <div class="col-md-4 no-padding center-content">
                 <img src="rights/author/Bill_Page_In_Uniform.jpg" alt="Bill Page in Uniform" class="img-fluid">
@@ -68,7 +75,7 @@ include 'config.php';
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
 </body>
 
 </html>
