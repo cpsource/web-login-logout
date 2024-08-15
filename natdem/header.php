@@ -46,6 +46,39 @@
             width: 100%;
             margin: 0 auto;
         }
+        .custom-container {
+            width: 80%; /* Set the container to 75% of the viewport width */
+            margin: 0 auto; /* Center the container horizontally */
+            display: flex;
+            flex-wrap: wrap; /* Allow the columns to wrap on smaller screens */
+        }
+
+        .left-column-a {
+            flex: 0 0 15%; /* Take up 20% of the container's width */
+            max-width: 15%; /* Ensure the column does not exceed 20% */
+            padding: 20px;
+            box-sizing: border-box; /* Ensure padding is included in the width */
+        }
+
+        .right-column-a {
+            flex: 1; /* Take up the remaining space */
+            background-color: #f8f9fa; /* Light background color */
+            padding: 20px;
+            box-sizing: border-box; /* Ensure padding is included in the width */
+        }
+        .left-column-b {
+            flex: 0 0 15%; /* Take up 20% of the container's width */
+            max-width: 15%; /* Ensure the column does not exceed 20% */
+            padding: 20px;
+            box-sizing: border-box; /* Ensure padding is included in the width */
+        }
+
+        .right-column-b {
+            flex: 1; /* Take up the remaining space */
+            background-color: #a3d9a5; /* Light background color */
+            padding: 20px;
+            box-sizing: border-box; /* Ensure padding is included in the width */
+        }
         
     </style>
 </head>
@@ -56,20 +89,22 @@ include 'config.php';
 ?>
 
 <body>
-    <div class="container-fluid darker-green-bg custom-container">
-        <div class="row no-padding">
-            <div class="col-md-4 no-padding center-content">
-                <img src="rights/author/Bill_Page_In_Uniform.jpg" alt="Bill Page in Uniform" class="img-fluid">
-            </div>
-            <div class="col-md-4 no-padding center-content">
-                <h1 class="text-black">Natural Democracy</h1>
-                <p>Natural Democracy by William R. Page</p>
-            </div>
-            <div class="col-md-4 no-padding center-content">
-                <img src="./images/WRPBookCover.jpg" alt="WRP Book Cover" class="img-fluid">
-            </div>
-        </div>
+<div class="custom-container">
+    <div class="left-column-a">
     </div>
+    <div class="right-column-b darker-green-bg">
+      <div class="row">
+        <img src="rights/author/Bill_Page_In_Uniform.jpg" alt="Bill Page in Uniform" class="img-fluid">
+	<div class="col-md-3 no-padding center-content">
+          <h1 class="text-black">Natural Democracy</h1>
+          <p>Natural Democracy by William R. Page</p>
+	</div>
+	<div class="col-md-3 no-padding center-content">
+          <img src="./images/WRPBookCover.jpg" alt="WRP Book Cover" class="img-fluid">
+	</div>
+      </div>
+    </div>
+</div>
 
     <hr class="custom-hr">
 
