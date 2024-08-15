@@ -6,6 +6,14 @@
     <title>Home Page</title>
     <link href="/css/bootstrap.css" rel="stylesheet">
     <style>
+        .container-fluid-s {
+            display: flex;
+            padding: 0;
+            margin: 0;
+	    min-height: 100vh;
+            margin-left: 20px;
+        }
+
         .sidebar {
             background-color: #a3d9a5; /* Slightly darker green background */
             padding-top: 20px;
@@ -27,8 +35,14 @@
             color: #f8f9fa;
         }
 
+        .content {
+            flex: 1; /* Main content takes up the remaining space */
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
         @media (max-width: 768px) {
-            .container-fluid {
+            .container-fluid-s {
                 flex-direction: column;
                 max-width: 1200px;
                 width: 100%;
@@ -44,28 +58,10 @@
             .sidebar a {
                 text-align: center;
             }
-        }
 
-        .custom-container {
-            width: 80%; /* Set the container to 75% of the viewport width */
-            margin: 0 auto; /* Center the container horizontally */
-            display: flex;
-            flex-wrap: wrap; /* Allow the columns to wrap on smaller screens */
-        }
-
-        .left-column {
-            flex: 0 0 15%; /* Take up 20% of the container's width */
-            max-width: 15%; /* Ensure the column does not exceed 20% */
-            background-color: #a3d9a5; /* Slightly darker green background */
-            padding: 20px;
-            box-sizing: border-box; /* Ensure padding is included in the width */
-        }
-
-        .right-column {
-            flex: 1; /* Take up the remaining space */
-            background-color: #f8f9fa; /* Light background color */
-            padding: 20px;
-            box-sizing: border-box; /* Ensure padding is included in the width */
+            .content {
+                padding-top: 20px;
+            }
         }
         
     </style>
@@ -75,9 +71,8 @@
 <!-- Include Header -->
 <?php include 'header.php'; ?>
 
-<div class="custom-container">
-    <div class="left-column">
-      <nav class="sidebar">
+<div class="container-fluid container-fluid-s">
+    <nav class="sidebar">
         <h3 class="text-center text-light">Menu</h3>
         <a href="/?page=author">The Author</a>
         <a href="/?page=book">The Book</a>
@@ -90,20 +85,12 @@
         <a href="/?page=bombs">Atomic Bombs</a>
         <a href="/?page=secretariat">UN Secretariat</a>
         <a href="/?page=end9">Music and Parting Words</a>						
-      </nav>
-    </div>
-    <div class="right-column">
+    </nav>
+
+    <div class="content">
         <?php include 'rights/index.php'; ?>
     </div>
 </div>
-
-<!-- Include Footer -->
-<?php include 'footer.php'; ?>
-
-<!-- Optional JavaScript; choose one of the two! -->
-
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
