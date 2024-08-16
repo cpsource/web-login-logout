@@ -80,9 +80,9 @@ echo $goh;
 // onward with the main rights table
 //
 $tc = '<hr>
-       <table cellpadding="2" cellspacing="2" border="0" style="text-align: left; width: 700px;">
+       <table class="table-class" cellpadding="2" cellspacing="2" border="0" style="text-align: left; width: 700px;">
        <tbody>
-       <tr><td>';
+       <tr><td class="td-class">';
 $bc = '</tr></td>
        </tbody>
        </table>';

@@ -52,6 +52,22 @@ body, html {
     background-color: #f8f9fa;
 }
 
+.table-story {
+	width: 100%;
+    	table-layout: fixed;
+	border-collapse: collapse;
+	font-size: 18px;
+        }
+
+.td-story {
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	white-space: normal;
+	width: 150px;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
 /* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {
     .left-column {
@@ -59,6 +75,9 @@ body, html {
     }
     .left-column ul li a {
         padding: 10px;
+    }
+    .table-story {
+	font-size: 14px;
     }
 }
 
@@ -69,5 +88,8 @@ body, html {
     .left-column ul li a {
         padding: 5px;
         font-size: 12px; /* Smaller text for phones */
+    }
+    .table-story {
+	font-size: 12px; /* smaller font */
     }
 }
