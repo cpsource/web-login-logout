@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+	display: flex;
+}
+
+.left-column {
+    flex: 0 0 250px; /* Fixed width for desktop */
+    background-color: #f8f9fa;
+    color: white;
+}
+
+.left-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.left-column ul li {
+    flex: 1; /* Equal height for each menu item */
+}
+
+.left-column ul li a {
+    display: block;
+    padding: 20px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 1px solid #495057;
+}
+
+.left-column ul li a:hover {
+    background-color: #495057;
+    color: red;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .left-column {
+        flex: 0 0 100px; /* Narrower width for tablets */
+    }
+    .left-column ul li a {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .left-column {
+        flex: 0 0 60px; /* Even narrower width for phones */
+    }
+    .left-column ul li a {
+        padding: 5px;
+        font-size: 12px; /* Smaller text for phones */
+    }
+}
