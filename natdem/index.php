@@ -51,6 +51,11 @@
             margin: 0 auto; /* Center the container horizontally */
             display: flex;
             flex-wrap: wrap; /* Allow the columns to wrap on smaller screens */
+	    <?php
+	    if ($cp_debug) {
+		echo "border: 8px solid black;"; /* for debug, show our container */
+	    }
+            ?>
         }
 
         .left-column {
@@ -59,6 +64,11 @@
             background-color: #a3d9a5; /* Slightly darker green background */
             padding: 20px;
             box-sizing: border-box; /* Ensure padding is included in the width */
+	    <?php
+	    if ($cp_debug) {
+		echo "border: 8px solid red;"; /* for debug, show our container */
+	    }
+	    ?>
         }
 
         .right-column {
@@ -66,8 +76,11 @@
             background-color: #f8f9fa; /* Light background color */
             padding: 20px;
             box-sizing: border-box; /* Ensure padding is included in the width */
-        }
-        
+	    <?php
+	    if ($cp_debug) {
+		echo "border: 8px solid blue;"; /* for debug, show our container */
+	    }
+            ?>
     </style>
 </head>
 <body>
@@ -78,7 +91,7 @@
 <div class="custom-container">
     <div class="left-column">
       <nav class="sidebar">
-        <h3 class="text-center text-light">Menu</h3>
+<        <h3 class="text-center text-light">Menu</h3>
         <a href="/?page=author">The Author</a>
         <a href="/?page=book">The Book</a>
         <a href="/?page=pressroom">Press Room</a>

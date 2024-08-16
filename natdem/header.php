@@ -1,3 +1,6 @@
+<?php
+$cp_border = false;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
-    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .darker-green-bg {
             background-color: #a3d9a5;
@@ -78,7 +81,26 @@
             background-color: #a3d9a5; /* Light background color */
             padding: 20px;
             box-sizing: border-box; /* Ensure padding is included in the width */
+	    <?php
+	    if ($cp_border) {
+		echo "border: 8px solid red;"; /* for debug, show our container */
+	    }
+            ?>
         }
+	.row {
+	    <?php
+	    if ($cp_border) {
+		echo "border: 8px solid blue;"; /* for debug, show our container */
+	    }
+            ?>
+	}
+	.black-border {
+	    <?php
+	    if ($cp_border) {
+		echo "border: 8px solid black;"; /* for debug, show our container */
+	    }
+            ?>
+	}
         
     </style>
 </head>
@@ -89,18 +111,32 @@ include 'config.php';
 ?>
 
 <body>
-<div class="custom-container">
+<div class="container">
     <div class="left-column-a">
     </div>
     <div class="right-column-b darker-green-bg">
       <div class="row">
-        <img src="rights/author/Bill_Page_In_Uniform.jpg" alt="Bill Page in Uniform" class="img-fluid">
-	<div class="col-md-3 no-padding center-content">
-          <h1 class="text-black">Natural Democracy</h1>
-          <p>Natural Democracy by William R. Page</p>
+	
+	<div class="col-md-4 black-border">
+          <div class="p-3 border bg-light">
+            <!-- Content for the first column -->
+	    <img src="rights/author/Bill_Page_In_Uniform.jpg" alt="Bill Page in Uniform" class="img-fluid">
+          </div>
 	</div>
-	<div class="col-md-3 no-padding center-content">
-          <img src="./images/WRPBookCover.jpg" alt="WRP Book Cover" class="img-fluid">
+
+	<div class="col-md-4 center-content black-border">
+          <div class="p-3 border bg-light">
+            <!-- Content for the second column -->
+	    <h1 class="text-black">Natural Democracy</h1>
+	    <p>Natural Democracy by William R. Page</p>
+          </div>
+	</div>
+
+	<div class="col-md-4 black-border">
+	  <div class="p-3 border bg-light">
+	    <!-- Content for the third column -->
+            <img src="./images/WRPBookCover.jpg" alt="WRP Book Cover" class="img-fluid">
+	  </div>
 	</div>
       </div>
     </div>
