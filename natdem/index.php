@@ -96,6 +96,7 @@
 		echo "border: 8px solid blue;"; /* for debug, show our container */
 	    }
 	    ?>
+        }
 <!--
 	nav a {
             display: block;
