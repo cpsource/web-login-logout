@@ -1,4 +1,5 @@
 
+/* <!-- pzzz No @extend so we have to do this the hard way --> */
 .text-large {
     font-size: 18px; /* Large text */
 }
@@ -11,6 +12,10 @@
     font-size: 14px; /* Small text */
 }
 
+.table-class {
+    font-size: 18px; /* Large text */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,11 +25,11 @@
 body, html {
     height: 100%;
     font-family: 'Roboto', sans-serif; /* Apply the Google Font */
-    @extend .text-large;
+    font-size: 18px; /* Large text */
 }
 
 .container {
-	display: flex;
+    display: flex;
 }
 
 .left-column {
@@ -81,48 +86,43 @@ body, html {
 	border: 1px solid #ccc;
 }
 
-.text-large {
-    font-size: 18px; /* Large text */
-}
-
-.text-medium {
-    font-size: 16px; /* Medium text */
-}
-
-.text-small {
-    font-size: 14px; /* Small text */
-}
-
 /* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {
     .left-column {
         flex: 0 0 100px; /* Narrower width for tablets */
-	@extend .text-medium;
+	font-size: 16px;
     }
     .left-column ul li a {
         padding: 10px;
-	@extend .text-medium;
+	font-size: 16px;
     }
     .table-story {
-	@extend .text-medium;
+	font-size: 16px;
     }
+    .table-class {
+	font-size: 16px;
+    }
+
 }
 
 @media screen and (max-width: 480px) {
     .left-column {
         flex: 0 0 60px; /* Even narrower width for phones */
-	@extend .text-small;
+	font-size: 14px;
     }
     .left-column ul li a {
         padding: 5px;
-	@extend .text-small;
+	font-size: 14px;
     }
     .table-story {
-	@extend .text-small;
+	font-size: 14px;
+    }
+    .table-class {
+	font-size: 14px;
     }
 }
 
-<-- from header.php -->
+/* <-- from header.php --> */
         .darker-green-bg {
             background-color: #a3d9a5;
             /* Slightly darker green background */
@@ -194,28 +194,17 @@ body, html {
             background-color: #a3d9a5; /* Light background color */
             padding: 20px;
             box-sizing: border-box; /* Ensure padding is included in the width */
-	    <?php
-	    if ($cp_border) {
-		echo "border: 8px solid red;"; /* for debug, show our container */
+	    /* border: 8px solid red; */ /* for debug, show our container */
 	    }
-            ?>
-        }
 	.row {
-	    <?php
-	    if ($cp_border) {
-		echo "border: 8px solid blue;"; /* for debug, show our container */
-	    }
-            ?>
+	    /* border: 8px solid blue; */ /* for debug, show our container */
 	}
 	.black-border {
-	    <?php
-	    if ($cp_border) {
-		echo "border: 8px solid black;"; /* for debug, show our container */
-	    }
-            ?>
+	    /* border: 8px solid black; */ /* for debug, show our container */
 	}
+	
         
-<!-- from footer.php -->
+/* <!-- from footer.php --> */
 	.custom-hr {
 	    border: none;
 	    border-top: 2px solid black;

@@ -1,3 +1,5 @@
+<!-- <body> -->
+
 <footer>
     <hr class="custom-hr">
     <div class="footer-text">
@@ -5,4 +7,6 @@
         <a href="index.php" class="btn btn-primary">Home</a>
     </div>
 </footer>
+
+<!-- </body> -->
 
