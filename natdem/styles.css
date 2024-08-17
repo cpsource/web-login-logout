@@ -1,3 +1,16 @@
+
+.text-large {
+    font-size: 18px; /* Large text */
+}
+
+.text-medium {
+    font-size: 16px; /* Medium text */
+}
+
+.text-small {
+    font-size: 14px; /* Small text */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +19,8 @@
 
 body, html {
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Apply the Google Font */
+    @extend .text-large;
 }
 
 .container {
@@ -56,7 +70,6 @@ body, html {
 	width: 100%;
     	table-layout: fixed;
 	border-collapse: collapse;
-	font-size: 18px;
         }
 
 .td-story {
@@ -68,28 +81,148 @@ body, html {
 	border: 1px solid #ccc;
 }
 
+.text-large {
+    font-size: 18px; /* Large text */
+}
+
+.text-medium {
+    font-size: 16px; /* Medium text */
+}
+
+.text-small {
+    font-size: 14px; /* Small text */
+}
+
 /* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {
     .left-column {
         flex: 0 0 100px; /* Narrower width for tablets */
+	@extend .text-medium;
     }
     .left-column ul li a {
         padding: 10px;
+	@extend .text-medium;
     }
     .table-story {
-	font-size: 14px;
+	@extend .text-medium;
     }
 }
 
 @media screen and (max-width: 480px) {
     .left-column {
         flex: 0 0 60px; /* Even narrower width for phones */
+	@extend .text-small;
     }
     .left-column ul li a {
         padding: 5px;
-        font-size: 12px; /* Smaller text for phones */
+	@extend .text-small;
     }
     .table-story {
-	font-size: 12px; /* smaller font */
+	@extend .text-small;
     }
 }
+
+<-- from header.php -->
+        .darker-green-bg {
+            background-color: #a3d9a5;
+            /* Slightly darker green background */
+            padding-top: 10px;
+            /* Add 10px padding at the top */
+            padding-bottom: 10px;
+        }
+
+        .img-fluid {
+            max-height: 200px;
+            /* Adjust the height to match the second image */
+            width: auto;
+            /* Keep the aspect ratio */
+            display: block;
+            margin: 0 auto;
+            /* Center the image horizontally */
+        }
+
+        .no-padding {
+            padding: 0;
+        }
+
+        .center-content {
+            text-align: center;
+        }
+
+        hr.custom-hr {
+            border: none;
+            border-top: 2px solid black;
+            width: 50%;
+            margin: 20px auto;
+            /* Add 20px padding around the hr */
+        }
+
+        .custom-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .custom-container {
+            width: 80%; /* Set the container to 75% of the viewport width */
+            margin: 0 auto; /* Center the container horizontally */
+            display: flex;
+            flex-wrap: wrap; /* Allow the columns to wrap on smaller screens */
+        }
+
+        .left-column-a {
+            flex: 0 0 15%; /* Take up 20% of the container's width */
+            max-width: 15%; /* Ensure the column does not exceed 20% */
+            padding: 20px;
+            box-sizing: border-box; /* Ensure padding is included in the width */
+        }
+
+        .right-column-a {
+            flex: 1; /* Take up the remaining space */
+            background-color: #f8f9fa; /* Light background color */
+            padding: 20px;
+            box-sizing: border-box; /* Ensure padding is included in the width */
+        }
+        .left-column-b {
+            flex: 0 0 15%; /* Take up 20% of the container's width */
+            max-width: 15%; /* Ensure the column does not exceed 20% */
+            padding: 20px;
+            box-sizing: border-box; /* Ensure padding is included in the width */
+        }
+
+        .right-column-b {
+            flex: 1; /* Take up the remaining space */
+            background-color: #a3d9a5; /* Light background color */
+            padding: 20px;
+            box-sizing: border-box; /* Ensure padding is included in the width */
+	    <?php
+	    if ($cp_border) {
+		echo "border: 8px solid red;"; /* for debug, show our container */
+	    }
+            ?>
+        }
+	.row {
+	    <?php
+	    if ($cp_border) {
+		echo "border: 8px solid blue;"; /* for debug, show our container */
+	    }
+            ?>
+	}
+	.black-border {
+	    <?php
+	    if ($cp_border) {
+		echo "border: 8px solid black;"; /* for debug, show our container */
+	    }
+            ?>
+	}
+        
+<!-- from footer.php -->
+	.custom-hr {
+	    border: none;
+	    border-top: 2px solid black;
+	    width: 50%;
+	    margin: 20px auto; /* Center the hr and add padding */
+	}
+	.footer-text {
+	    text-align: center;
+	    padding: 10px 0;
+	}
