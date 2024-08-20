@@ -3,7 +3,7 @@
 # Function to display help message
 show_help() {
     echo "Usage: $0 <invisible|visible>"
-    echo "invisible: Removes all files and directories except the .git directory."
+    echo "invisible: Removes all files and directories except the .git directory and this script."
     echo "visible: Restores all files and directories from the latest commit."
     exit 1
 }
@@ -24,10 +24,10 @@ fi
 if [ "$1" == "invisible" ]; then
     echo "Making files invisible..."
     
-    # Remove all files and directories except .git
-    find . -path ./\.git -prune -o -exec rm -rf {} +
+    # Remove all files and directories except .git and this script
+    find . -path ./\.git -prune -o -name "$(basename "$0")" -prune -o -exec rm -rf {} +
     
-    echo "All files and directories have been removed except the .git directory."
+    echo "All files and directories have been removed except the .git directory and this script."
 
 elif [ "$1" == "visible" ]; then
     echo "Restoring files from the latest commit..."
