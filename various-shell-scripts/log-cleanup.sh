@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# This script checks the /var/log directory and all its subdirectories for compressed log files (*.gz).
+# If there are more than four of any type of log file, the script will keep only the four most recent
+# files and delete the older ones. 
+# The script must be run as root to ensure it has the necessary permissions to delete log files.
+# If the script is not run as root, it will display an error message and exit.
+
+# Ensure the script is run as root
+if [ "$EUID" -ne 0 ]; then
+  echo "This script must be run as root. Please use sudo."
+  echo "Example: sudo $0"
+  exit 1
+fi
+
 # Directory to check
 log_dir="/var/log"
 
@@ -16,7 +29,7 @@ cleanup_logs() {
         if [ $(echo "$files" | wc -l) -gt 0 ]; then
             echo "Deleting older files of type ${file_type} in ${dir}:"
             echo "$files"
-            rm -f $files
+            rm $files
         fi
     done
 }
