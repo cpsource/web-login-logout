@@ -1,0 +1,28 @@
+Allocating RAM for MariaDB - The Short Answer
+If only using MyISAM, set key_buffer_size to 20% of available RAM. (Plus innodb_buffer_pool_size=0)
+
+If only using InnoDB, set innodb_buffer_pool_size to 70% of available RAM. (Plus key_buffer_size = 10M, small, but not zero.)
+
+Rule of thumb for tuning:
+
+Start with released copy of my.cnf / my.ini.
+Change key_buffer_size and innodb_buffer_pool_size according to engine usage and RAM.
+Slow queries can usually be 'fixed' via indexes, schema changes, or SELECT changes, not by tuning.
+Don't get carried away with the query cache until you understand what it can and cannot do.
+Don't change anything else unless you run into trouble (eg, max connections).
+Be sure the changes are under the [mysqld] section, not some other section.
+The 20%/70% assumes you have at least 4GB of RAM. If you have less total available RAM, then those percentages are too high and can lead to OOM events or swapping.
+
+Now for the gory details.
+
+Reference: https://mariadb.com/kb/en/mariadb-memory-allocation/
+
+---
+
+Developer Quickstart: PHP mysqli and MariaDB : https://mariadb.com/resources/blog/developer-quickstart-php-mysqli-and-mariadb/
+
+---
+
+/var/lib/mysql
+The data directory location is controlled by the datadir variable. Look at your /etc/mysql/my. cnf file to see where your installation of MariaDB is configured to store data. The default is /var/lib/mysql but it is often changed, like for example if you are using a RAID array.
+
