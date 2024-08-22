@@ -1,0 +1,33 @@
+/* Set the width of the containers to 80% of the viewport */
+.container {
+    width: 80vw;
+}
+
+/* Content-box container */
+.content-box-container {
+    box-sizing: content-box;
+    background-color: #f8f9fa;
+}
+
+/* Border-box container */
+.border-box-container {
+    box-sizing: border-box;
+    background-color: #e9ecef;
+}
+
+/* Style for each box */
+.box {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+/* Make each box take up 25% of the container's width */
+.row .col {
+    flex: 0 0 calc(25% - 20px);
+    max-width: calc(25% - 20px);
+    margin: 0 5px;
+}
+
