@@ -14,7 +14,7 @@
 			<td class="sidebar"><a href="/?page=book">The Book</a></td>
 		</tr>
 		<tr>
-			<td class="sidebar"><a href="http://natdem.net/?page=pressroom">Press Room</a></td>
+			<td class="sidebar"><a href="/?page=pressroom">Press Room</a></td>
 		</tr>
 		</tbody></table>
 
