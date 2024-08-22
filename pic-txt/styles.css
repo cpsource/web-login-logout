@@ -1,0 +1,25 @@
+.pic-txt {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.pic-txt img {
+    margin-right: 20px;
+    max-width: 150px;
+    height: auto;
+    float: left;
+}
+
+.pic-txt p {
+    margin: 0;
+    flex: 1;
+}
+
+/* Ensure the text wraps underneath the image */
+.pic-txt p::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
