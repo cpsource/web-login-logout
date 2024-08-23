@@ -1,0 +1,16 @@
+.pic-txt {
+    overflow: hidden; /* Ensures the container clears the floated image */
+    margin: 20px;
+}
+
+.pic-txt img {
+    float: left;
+    margin-right: 20px;
+    max-width: 150px;
+    height: auto;
+}
+
+.pic-txt p {
+    margin: 0;
+}
+

@@ -1,0 +1,50 @@
+/* Set the width of the containers to 80% of the viewport */
+.container {
+    width: 80vw;
+}
+
+/* Content-box container */
+.content-box-container {
+    box-sizing: content-box;
+    background-color: #f8f9fa;
+}
+
+/* Border-box container */
+.border-box-container {
+    box-sizing: border-box;
+    background-color: #e9ecef;
+}
+
+/* Style for each box */
+.box {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0 5px;
+    border: 5px solid #343a40;  /* Adding a 5px solid border */
+    box-sizing: border-box; /* Ensure the box includes padding and border in its size */
+    background-clip: content-box;
+}
+
+/* Set the padding area to have a red background */
+.box::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background-color: red;
+    z-index: -1;
+}
+
+/* Shrink each box size by 10% */
+.row .col {
+    flex: 0 0 calc(20% - 20px - 10px); /* Adjusted width after shrinking by 10% */
+    max-width: calc(20% - 20px - 10px); /* Adjusted width after shrinking by 10% */
+    margin: 0 5px;
+    position: relative; /* Needed to position the pseudo-element correctly */
+}
+
