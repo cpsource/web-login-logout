@@ -101,8 +101,14 @@ Audit your site
 
 Use 'Lets Encrypt' (https://letsencrypt.org/getting-started/) to get and manage your ssl certificates.
 
+Note: It's not so easy to get domains PLUS subdomains up. If you follow the simple instructions
+on the web site, it won't work. Be sure to edit the TXT file into your DNS record !
+
 Note: Before I could run this, I had to run ./cleanup.sh.
-Note: Edit run-certbot.sh for your web site. Use the command sudo ./run-certbot.sh, as it gives you both *.<website> and <website>
+Note: Run sudo ./run-certbot.sh.
+
+Note: I've included a copy of the first entry in my 000-default.conf and default-ssl.conf for subdomain csp. Replace <yoursite>
+with your site name.
 
 To get help with Lets Encrypt, see https://community.letsencrypt.org/
 
@@ -111,4 +117,6 @@ References
 https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/?utm_source=lighthouse&utm_medium=devtools
 
 https://chatgpt.com (Really handy for writing scripts! I estimate I am 20 times more productive.)
+
+https://community.letsencrypt.org/t/wildcard-subdomain-cert-doesnt-work-before-i-created-certs-for-main-domain-and-another-subdomains/78724/2
  
