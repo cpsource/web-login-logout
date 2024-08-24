@@ -98,7 +98,11 @@ Audit your site
   And, somewhat unrelated, you might want to run Chrome's built-in web page evaluator. Bring up your
   home page, right click on it, select Inspect, then look to the top right window and just above it,
   one of the menu items will be Lighthouse. Click on that.
- 
+
+Use 'Lets Encrypt' (https://letsencrypt.org/getting-started/) to get and manage your ssl certificates.
+
+Note: Before I could run this, I had to run ./cleanup.sh.
+
 References
 
 https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/?utm_source=lighthouse&utm_medium=devtools

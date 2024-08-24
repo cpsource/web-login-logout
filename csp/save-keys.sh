@@ -8,7 +8,7 @@
 # The script will create the necessary directories if they do not already exist.
 # It preserves the file permissions and ownership of the copied files.
 # Additionally, it changes the permissions and ownership of the ./ssl/private
-# directory to match those of /etc/ssl/private.
+# directory and the copied files to match those of the source files.
 # Before exiting, it will also diff the copied files against the originals.
 
 # Function to display help message
@@ -82,6 +82,45 @@ if [ -d "$src_private" ]; then
     echo "Changed owner and group of $dst_private to match $src_private"
 else
     echo "Source directory $src_private not found"
+fi
+
+# Change permissions, owner, and group of ca_bundle.crt to match /etc/ssl/ca-bundle.crt
+if [ -f "$dst_ssl/ca_bundle.crt" ]; then
+    src_mode=$(stat -c "%a" "$src_ssl/ca-bundle.crt")
+    src_owner=$(stat -c "%u" "$src_ssl/ca-bundle.crt")
+    src_group=$(stat -c "%g" "$src_ssl/ca-bundle.crt")
+
+    chmod "$src_mode" "$dst_ssl/ca_bundle.crt"
+    chown "$src_owner:$src_group" "$dst_ssl/ca_bundle.crt"
+
+    echo "Changed permissions of $dst_ssl/ca_bundle.crt to match $src_ssl/ca-bundle.crt"
+    echo "Changed owner and group of $dst_ssl/ca_bundle.crt to match $src_ssl/ca-bundle.crt"
+fi
+
+# Change permissions, owner, and group of certificate.crt to match /etc/ssl/certificate.crt
+if [ -f "$dst_ssl/certificate.crt" ]; then
+    src_mode=$(stat -c "%a" "$src_ssl/certificate.crt")
+    src_owner=$(stat -c "%u" "$src_ssl/certificate.crt")
+    src_group=$(stat -c "%g" "$src_ssl/certificate.crt")
+
+    chmod "$src_mode" "$dst_ssl/certificate.crt"
+    chown "$src_owner:$src_group" "$dst_ssl/certificate.crt"
+
+    echo "Changed permissions of $dst_ssl/certificate.crt to match $src_ssl/certificate.crt"
+    echo "Changed owner and group of $dst_ssl/certificate.crt to match $src_ssl/certificate.crt"
+fi
+
+# Change permissions, owner, and group of private.key to match /etc/ssl/private/private.key
+if [ -f "$dst_private/private.key" ]; then
+    src_mode=$(stat -c "%a" "$src_private/private.key")
+    src_owner=$(stat -c "%u" "$src_private/private.key")
+    src_group=$(stat -c "%g" "$src_private/private.key")
+
+    chmod "$src_mode" "$dst_private/private.key"
+    chown "$src_owner:$src_group" "$dst_private/private.key"
+
+    echo "Changed permissions of $dst_private/private.key to match $src_private/private.key"
+    echo "Changed owner and group of $dst_private/private.key to match $src_private/private.key"
 fi
 
 # Perform diff on the files to ensure they match
