@@ -102,6 +102,9 @@ Audit your site
 Use 'Lets Encrypt' (https://letsencrypt.org/getting-started/) to get and manage your ssl certificates.
 
 Note: Before I could run this, I had to run ./cleanup.sh.
+Note: Edit run-certbot.sh for your web site. Use the command sudo ./run-certbot.sh, as it gives you both *.<website> and <website>
+
+To get help with Lets Encrypt, see https://community.letsencrypt.org/
 
 References
 
