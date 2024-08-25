@@ -7,9 +7,6 @@
     <title>CSP Report Listener</title>
 </head>
 <body>
-    <h1>CSP Report Listener</h1>
-    <p>This page is used to receive and log CSP reports.</p>
-
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Get the JSON data from the request
@@ -32,6 +29,8 @@
         exit();
     }
     ?>
+    <h1>CSP Report Listener</h1>
+    <p>This page is used to receive and log CSP reports.</p>
 </body>
 </html>
 
