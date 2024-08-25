@@ -1,0 +1,3 @@
+git clone -c fetch.fsckObjects=false git@github.com:StanAngeloff/php.vim.git
+git clone https://github.com/junegunn/vim-plug.git
+git clone https://github.com/2072/PHP-Indenting-for-VIm.git

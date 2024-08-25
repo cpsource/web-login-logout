@@ -1,10 +1,17 @@
+<?php
+
+/*
+ * This web page receives any CSP exceptions and logs them
+ */
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSP Report Listener</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSP Report Listener</title>
 </head>
 <body>
 
@@ -128,16 +135,15 @@ function checkRateLimit($rateLimitFile, $maxTransactions, $timeLimit, $currentTi
         // Check if the current count exceeds the maximum allowed transactions
         return $count <= $maxTransactions;
     } else {
-        // If the lock could not be acquired, fail-open and allow the request
+        // If the lock could not be acquired, fail-open
         fclose($fileHandle);
         return false;
     }
-  }
 }
 ?>
-  
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Check if the request is within the rate limit
     if (checkRateLimit($rateLimitFile, $maxTransactions, $timeLimit, $currentTimestamp)) {
@@ -151,7 +157,7 @@ function checkRateLimit($rateLimitFile, $maxTransactions, $timeLimit, $currentTi
 
         if ($report) {
             // Log to a specific log file
-            file_put_contents('csp-reports.log', json_encode($report) . PHP_EOL, FILE_APPEND);
+            file_put_contents($logfile, json_encode($report) . PHP_EOL, FILE_APPEND | LOCK_EX);
 
             // Print the report to the screen (for debugging purposes)
             //echo '<pre>CSP Violation: ' . htmlspecialchars(json_encode($report, JSON_PRETTY_PRINT)) . '</pre>';
@@ -161,17 +167,16 @@ function checkRateLimit($rateLimitFile, $maxTransactions, $timeLimit, $currentTi
         http_response_code(204);
         exit();
     } else {
-      // Return a 429 Too Many Requests response
-     http_response_code(429);
-     exit();
-    //  echo "Rate limit exceeded. Please try again later.";
-    }
-} // check rate limit
+        // Return a 429 Too Many Requests response
+        http_response_code(429);
+        exit();
+        //  echo "Rate limit exceeded. Please try again later.";
+    } //check rate limit
 } // POST
 
-    ?>
-    <h1>CSP Report Listener</h1>
-    <p>This page is used to receive and log CSP reports.</p>
+?>
+<h1>CSP Report Listener</h1>
+<p>This page is used to receive and log CSP reports.</p>
 </body>
 </html>
 
