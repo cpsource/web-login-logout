@@ -1,57 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSP Report Listener</title>
-</head>
-<body>
-
-<?php
-session_start();
-
-// File to log POST data
-$logfile = 'csp-reports.log';
-
-// File to track timestamps for rate limiting
-$rateLimitFile = 'rate_limit.txt';
-
-// Maximum number of transactions per minute
-$maxTransactions = 20;
-
-// Time limit in seconds (1 minute)
-$timeLimit = 60;
-
-// Time to wait for the lock in seconds
-$lockWaitTime = 2;
-
-// Get the current timestamp
-$currentTimestamp = time();
-
-// Function to acquire a lock on the file
-function acquireLock($fileHandle, $lockWaitTime) {
-    $startTime = microtime(true);
-
-    do {
-        // Try to acquire an exclusive lock (LOCK_EX)
-        if (flock($fileHandle, LOCK_EX | LOCK_NB)) {
-            // Lock acquired
-            return true;
-        }
-        // Sleep for a short while before trying again
-        usleep(100000); // 100 milliseconds
-    } while (microtime(true) - $startTime < $lockWaitTime);
-
-    // Failed to acquire lock within $lockWaitTime
-    return false;
-}
-
-// Function to release a lock on the file
-function releaseLock($fileHandle) {
-    return flock($fileHandle, LOCK_UN);
-}
-
 /**
  * checkRateLimit - Enforces a rate limit on transactions.
  * 
@@ -130,48 +76,7 @@ function checkRateLimit($rateLimitFile, $maxTransactions, $timeLimit, $currentTi
     } else {
         // If the lock could not be acquired, fail-open and allow the request
         fclose($fileHandle);
-        return false;
+        return true;
     }
-  }
 }
-?>
-  
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    // Check if the request is within the rate limit
-    if (checkRateLimit($rateLimitFile, $maxTransactions, $timeLimit, $currentTimestamp)) {
-
-        // Get the JSON data from the request
-        $json = file_get_contents('php://input');
-        $data = json_decode($json, true);
-
-        // Extract the 'csp-report' field
-        $report = isset($data['csp-report']) ? $data['csp-report'] : null;
-
-        if ($report) {
-            // Log to a specific log file
-            file_put_contents('csp-reports.log', json_encode($report) . PHP_EOL, FILE_APPEND);
-
-            // Print the report to the screen (for debugging purposes)
-            //echo '<pre>CSP Violation: ' . htmlspecialchars(json_encode($report, JSON_PRETTY_PRINT)) . '</pre>';
-        }
-
-        // Return a 204 No Content response
-        http_response_code(204);
-        exit();
-    } else {
-      // Return a 429 Too Many Requests response
-     http_response_code(429);
-     exit();
-    //  echo "Rate limit exceeded. Please try again later.";
-    }
-} // check rate limit
-} // POST
-
-    ?>
-    <h1>CSP Report Listener</h1>
-    <p>This page is used to receive and log CSP reports.</p>
-</body>
-</html>
 
