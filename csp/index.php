@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Print the report to the screen (for debugging purposes)
         //echo '<pre>CSP Violation: ' . htmlspecialchars(json_encode($report, JSON_PRETTY_PRINT)) . '</pre>';
     } else {
-        file_put_contents('error-log.log', "index.php reports NULL" . PHP_EOL, FILE_APPEND | LOCK_EX);
+        file_put_contents('error-log.log', "index.php reports NULL at" . date('Y-m-d H:i:s') . PHP_EOL, FILE_APPEND | LOCK_EX);
         file_put_contents('csp-reports.log', json_encode($data) . PHP_EOL, FILE_APPEND | LOCK_EX);
     }
 
