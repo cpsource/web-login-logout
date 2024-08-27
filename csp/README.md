@@ -1,4 +1,8 @@
-Setting up a CSP (content security policy) for your web site for ubuntu linux with apache2 and a chrome browser.
+I setup a strict CSP (content security policy) for one of my web sites. These are my notes
+on the process. They will SAVE YOU a great deal of time if you've never done it
+before.
+
+I used ubuntu linux with apache2 and a chrome browser.
 
 Let's assume our CSP exception logger will be our website. We will
 create a subdomain of the form csp.<yoursite>.org and add a web page
@@ -9,17 +13,19 @@ web page called phpinfo.php of the form:
 
   ```<?php
     phpinfo();
-  ```?>
+    />
+  ```
 
-Point chrome at this and you should get a long printout of configuration data.
+Point chrome at this and you should get a long printout of configuration data, which, for the
+most part, you can ignore.
 
-It's a good idea to save off your ssl keys. Do so with the script:
+It's a good idea to save off your old ssl keys. Do so with the script:
 
   ```
       sudo ./save-key.sh
   ````
   
-Next, make sure your DNS records support the new subdomain. You must have an
+Make sure your DNS records support the new subdomain. You must have an
 entry of the form:
 
   ```
@@ -35,7 +41,7 @@ form:
 	*.<yoursite>.org
   ```
 
-I used a 'free' certificate from zerossl and I don't recommend them. First
+For a while, I used a 'free' certificate from zerossl and I don't recommend them. First
 the certificate is good for only three months, and two, it did not include
 support for my subdomain.
 
@@ -63,6 +69,12 @@ Use:
   ...
 
   ```
+
+I've included 000-default.conf and default-ssl.conf that I  use, so you can see what
+I did.
+
+I've also included dot-gitignore and dot-htaccess as examples ONLY. These should be edited down to the '.' form of the
+file and placed in /var/www/html. For example, cp dot-htaccess /var/www/html/.htaccess.
 
 Restart apache2 via the command: sudo systemctl restart apache2.
 
@@ -107,12 +119,11 @@ on the web site, it won't work. Be sure to edit the TXT file into your DNS recor
 Note: Before I could run this, I had to run ./cleanup.sh.
 Note: Run sudo ./run-certbot.sh.
 
-Note: I've included a copy of the first entry in my 000-default.conf and default-ssl.conf for subdomain csp. Replace <yoursite>
-with your site name.
+Note: I've included a copy of the first entry in my 000-default.conf and default-ssl.conf for subdomain csp. Replace <yoursite> with your site name.
 
 To get help with Lets Encrypt, see https://community.letsencrypt.org/
 
-## Work Flow
+## Your Work Flow
 
 If you first turn on CSP, the output can be overwhelming. Here's some tips.
 
@@ -128,8 +139,7 @@ code to eleminate the exception.
 
 ## PHP vs JS
 
-Which one is better? This seems to be an old feud, one that I won't settle. Some things can be done with PHP, so do them
-in JS.
+Which one is better? This seems to be an old feud, one that I won't settle. Some things can not be done with PHP, so do them in JS.
 
 ## References
 
