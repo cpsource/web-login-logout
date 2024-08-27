@@ -112,11 +112,32 @@ with your site name.
 
 To get help with Lets Encrypt, see https://community.letsencrypt.org/
 
-References
+## Work Flow
+
+If you first turn on CSP, the output can be overwhelming. Here's some tips.
+
+1. Copy a csp-error.log entry, ask ChatGPT4 to explain it, then paste it in. Then go
+fix that particular error.
+
+2. And Chrome is a super resource. Bring up the web page in question, right click, and select 'Inspect'. 
+On the right side, you will see a tab for 'console'. In the console, you will see all the CSP
+exceptions listed. And, to help clarify the exceptions, cut and paste them into ChatGPT4 one at a time.
+
+3. Once you understand the error, copy your code into the paste buffer, and ask ChatGPT4 to rewrite the
+code to eleminate the exception.
+
+## PHP vs JS
+
+Which one is better? This seems to be an old feud, one that I won't settle. Some things can be done with PHP, so do them
+in JS.
+
+## References
 
 https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/?utm_source=lighthouse&utm_medium=devtools
 
 https://chatgpt.com (Really handy for writing scripts! I estimate I am 20 times more productive.)
 
 https://community.letsencrypt.org/t/wildcard-subdomain-cert-doesnt-work-before-i-created-certs-for-main-domain-and-another-subdomains/78724/2
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
  
